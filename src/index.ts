@@ -8,6 +8,7 @@ const browserless = new BrowserlessServer({
   enableCors: config.ENABLE_CORS,
   enableDebugViewer: config.ENABLE_DEBUG_VIEWER,
   enableDebugger: config.ENABLE_DEBUGGER,
+  enableIncognitoMode: config.ENABLE_INCOGNITO_MODE,
   enableXvfb: config.ENABLE_XVBF,
   errorAlertURL: config.ERROR_ALERT_URL,
   exitOnHealthFailure: config.EXIT_ON_HEALTH_FAILURE,
