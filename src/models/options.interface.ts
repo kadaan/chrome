@@ -24,6 +24,7 @@ export interface IChromeServiceConfiguration {
   demoMode: boolean;
   enableDebugger: boolean;
   enableDebugViewer: boolean;
+  enableIncognitoMode: boolean;
   functionExternals: string[];
   functionBuiltIns: string[];
   maxMemory: number;
