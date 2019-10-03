@@ -8,6 +8,7 @@ Array [
   "enableCors",
   "enableDebugViewer",
   "enableDebugger",
+  "enableIncognitoMode",
   "enableXvfb",
   "errorAlertURL",
   "exitOnHealthFailure",
