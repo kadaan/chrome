@@ -30,7 +30,7 @@ const treekill = require('tree-kill');
 const browserSetupPath = path.join(__dirname, '..', 'external', 'browser.js');
 const pageSetupPath = path.join(__dirname, '..', 'external', 'page.js');
 
-const BROWSERLESS_ARGS = ['--no-sandbox', '--disable-dev-shm-usage', '--enable-logging', '--v1=1'];
+const BROWSERLESS_ARGS = ['--disable-dev-shm-usage', '--enable-logging', '--v1=1'];
 const blacklist = require('../hosts.json');
 
 let runningBrowsers: IBrowser[] = [];

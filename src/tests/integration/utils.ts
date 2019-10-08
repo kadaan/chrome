@@ -53,6 +53,5 @@ export const killChrome = () => {
 export const webdriverOpts = {
   args: [
     '--headless',
-    '--no-sandbox',
   ],
 };
