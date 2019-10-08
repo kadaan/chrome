@@ -344,6 +344,25 @@ export const getRoutes = ({
     }]);
   }));
 
+  router.get(/^\/page\/(.+)\/.+/, async (req, res) => {
+    const id = req.params[0];
+    if (!id) {
+      return res.sendStatus(400);
+    }
+    const content = codeCache.get(id);
+    return res.send(content);
+  });
+
+  router.post('/page', jsonParser, async (req, res) => {
+    const url = new URL(req.body.url);
+    const content = req.body.content;
+    const id = codeCache.set(content);
+    const path = url.pathname.length <= 0 ? '' : url.pathname;
+    const queryString = url.search.length <= 0 ? '' : url.search;
+    return res
+      .json(`${url.protocol}//sst.ensighten.com:${config.port}/page/${id}/${url.hostname}${path}${queryString}`);
+  });
+
   if (config.enableDebugViewer) {
     router.get('/sessions', asyncWebHandler(async (_req: Request, res: Response) => {
       const pages = await chromeHelper.getDebuggingPages();

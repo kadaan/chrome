@@ -98,6 +98,10 @@ const setupPage = async ({
 
   await pageHook({ page });
 
+  await client.send('Network.setCacheDisabled', {
+    cacheDisabled: false,
+  });
+
   if (!DISABLE_AUTO_SET_DOWNLOAD_BEHAVIOR) {
     const workspaceDir = trackingId ?
       path.join(WORKSPACE_DIR, trackingId) :
